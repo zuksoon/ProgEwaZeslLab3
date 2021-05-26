@@ -24,7 +24,13 @@ namespace WinFormsAppLaboratoriaProg3_zad2
         {
             InitializeComponent();
         }
-
+        /*
+        void PrintText(object sender, SelectionChangedEventArgs args)
+{
+    ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
+    tb.Text = "   You selected " + lbi.Content.ToString() + ".";
+}
+        */
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -40,17 +46,21 @@ namespace WinFormsAppLaboratoriaProg3_zad2
             {
                 if (btnUzbrojona.IsChecked == true && btnUzbrojona.IsChecked == true)
                 {
-                    MessageBox.Show("Wystrzelono " + ListBox2.SelectedItem.ToString() + " w stronę okrętu " + ListBox1.SelectedItem.ToString());
+                    ListBoxItem ListItem1 = (ListBoxItem)ListBox1.SelectedItem; // tworzymy zbienną typu ListBox Item by dało się odczytać zawartość pola content
+                    ListBoxItem ListItem2 = (ListBoxItem)ListBox2.SelectedItem;
+                    
+                    MessageBox.Show("Wystrzelono " + ListItem2.Content + " w stronę okrętu " + ListItem1.Content);
                     ListBox2.Items.RemoveAt(ListBox2.SelectedIndex);
                     Task.Delay(1000);
-                    if (ListBox2.SelectedIndex == 1)
+                    if ((string)ListItem1.Content == "Bismark")
                     {
-                        MessageBox.Show("Kapitanie, list z dowództwa. Niniejszym odsowam Pana ze stanowiska Kapitana. Niech się Pan modli by dotrzeć na ląd cało ! *!^@!");
+                        
+                        MessageBox.Show("Kapitanie, list z dowództwa. Niniejszym odsówam Pana ze stanowiska Kapitana. Niech się Pan modli by dotrzeć na ląd cało ! *!^@!");
                         ListBox1.Items.RemoveAt(ListBox1.SelectedIndex);
                     }
                     else
                     {
-                        TextBox1.Text = ("Zniszczyliśmy okręt " + ListBox1.SelectedItem.ToString());
+                        TextBox1.Text = ("Zniszczyliśmy okręt " + ListItem1.Content);
                         ListBox1.Items.RemoveAt(ListBox1.SelectedIndex);
                     }
                 }

@@ -17,7 +17,7 @@
         <Label Content="Wykryte jednostki" HorizontalAlignment="Left" Margin="55,0,0,381" VerticalAlignment="Bottom" Cursor=""/>
         <Label Content="Przedział Torpedowy" HorizontalAlignment="Left" Margin="304,0,0,381" VerticalAlignment="Bottom" Cursor=""/>
         <RadioButton x:Name="btnZalana" Content="Zalana wyzutnia" HorizontalAlignment="Left" Margin="32,149,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="TextBox1" Text="TextBox" TextWrapping="Wrap" Width="120" Margin="35,0,107,170" Height="47" VerticalAlignment="Bottom" Grid.Column="1"/>
+        <TextBox x:Name="TextBox1" Text="-" TextWrapping="Wrap" Width="120" Margin="35,0,107,170" Height="47" VerticalAlignment="Bottom" Grid.Column="1"/>
         <ListBox x:Name="ListBox1" Margin="55,0,316,63" SelectionChanged="ListBox_SelectionChanged" Height="318" VerticalAlignment="Bottom">
             <ListBoxItem Content="STLuis"/>
             <ListBoxItem Content="Bismark"/>
